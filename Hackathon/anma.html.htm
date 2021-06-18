@@ -1,0 +1,41 @@
+<html>
+<head>
+<title>
+.HEELLO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="jspdf.min.js"></script>
+<script type="text/javascript">
+function genPDF(){
+var doc = new jsPDF();
+doc.text(20,20,"TEST Message");
+var s1=document.getElementById("pname").value;
+var r1="Patient Name :"+s1;
+doc.text(20,40,r1);
+var s2=document.getElementById("age").value;
+var r2="Age          :"+s2;
+doc.text(20,60,r2);
+var s3= document.getElementById("weight").value;
+var r3="Weight       :"+s3;
+doc.text(20,80,r3);
+doc.addPage();
+doc.text(20,20,"TEST TANMAI!!!!!");
+doc.save("Test.pdf");
+}
+</script>
+</head>
+<body>
+	<h1>Weird</h1>
+	<br>
+	<label>Patient Name :</label>
+	<input type="text" name="pname" id="pname">
+	<br>
+	<label>Age &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:</label>
+	<input type="text" name="age" id="age">
+	<br>
+	<label>Weight &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:</label>
+	<input type="text" name="weight" id="weight">
+	<br>
+	<button type="button" onclick="genPDF()">BUTTON</button>
+	<a href="javascript:genPDF()">Dowloadpdf</a>
+</body>
+</html>

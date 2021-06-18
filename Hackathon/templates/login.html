@@ -1,0 +1,39 @@
+{% extends "main_p.html" %}
+{% block title %}Login Page{% endblock %}
+
+{% block content %}
+<form action="#" method="get"> 
+<p class="formfield">
+<label>Patient Name &nbsp;:</label>
+<input type="text" id="pname" name="pname" placeholder="Name" size=40 style="font-size:16pt ;height:30px ;border:1px solidblack"><br><br>
+</p>
+<br>
+<p class="formfield">
+<label>Age &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;:</label>
+<input type="text" id="age" name="age" placeholder="Age" size=40 style="font-size:16pt ;height:30px ;border:1px solidblack"><br><br>
+</p>
+<br>
+<p class="formfield">
+<label>Weight &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;:</label>
+<input type="text" id="weight" name="weight" placeholder="Weight" size=40 style="font-size:16pt ;height:30px ;border:1px solidblack"><br><br>
+</p>
+<br>
+<p class="formfield">
+<label>Gender &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;:</label>
+<input type="text" id="gender" name="gender" placeholder="Gender"size=40 style="font-size:16pt;height:30px ;border:3px solidblack"><br><br>
+</p>
+<br>
+<p class="formfield">
+<label>Phone number &nbsp;:</label>
+<input type="text" id="pno" name="pno" maxlength="20" placeholder="Phone Number" size=40 style="font-size:16pt ;height:30px ;border:1px solidblack"><br><br>
+</p>
+<br>
+<p class="formfield">
+<label for="prob">Problem &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;:</label>
+<textarea id="prob" id="problem" name="problem" placeholder="Problem" rows=9 cols=40 style="resize: none;font-size:16pt" ></textarea>
+</p>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<button type="submit">Submit</button>
+<button onclick="window.location.href='page2.html';">Your turn</button><br><br>
+</form>
+{% endblock %}

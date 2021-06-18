@@ -1,0 +1,50 @@
+<html>
+<head>
+<style>
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<h1>Hello</h1><br>
+<label>Entry your Name &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :</label>
+<input type="text" id="entry1" name="entry1"><br>
+<label>Entry your Bucket Name:</label>
+<input type="text" id="entry2" name="entry2"><br>
+<button onclick="myFunction()">Try it</button>
+<br>
+<script language="javascript" type="text/javascript">
+var s1,r,s2,r2;
+function myFunction() {
+var a2 =document.getElementById("demo2");
+  s2=document.getElementById("entry2").value;
+  r2 = "https://" + s2 + ".s3.ap-south-1.amazonaws.com";
+  document.getElementById("demo2").innerHTML = r2;
+	a2.href=r2;
+	var a1 =document.getElementById("demo1");
+  s1=document.getElementById("entry1").value;
+  r1 = "https://" + s2 + ".s3.ap-south-1.amazonaws.com/" + s1 + ".pdf";
+  document.getElementById("demo1").innerHTML = r1;
+  a1.href=r1;
+}
+</script>
+<br>
+<label>Your BucketLink:</label>
+<a href="#" id="demo2" target="_blank"></a><br>
+<label>YourLink:</label>
+<a href="#" id="demo1" target="_blank"></a>
+</body>
+</html>

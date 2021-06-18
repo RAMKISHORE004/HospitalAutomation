@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>
+.HEELLO</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style type="text/css">
+label{
+	font-size: 24;
+	font: "BOLD";
+}
+</style>
+<script type="text/javascript" src="jspdf.min.js"></script>
+<script type="text/javascript" src="aws-sdk"></script><!--aws-sdk-2.1.12.min.js-->
+<!--<script type="text/javascript" src="qwerty.js"></script>-->
+<script type="text/javascript">
+function genPDF(){
+var doc = new jsPDF();
+doc.text(20,20,"TEST Message");
+var s1=document.getElementById("pname").value;
+var r1="Patient Name :"+s1;
+doc.text(20,30,r1);
+var s2=document.getElementById("age").value;
+var r2="Age          :"+s2;
+doc.text(20,40,r2);
+var s3= document.getElementById("weight").value;
+var r3="Weight       :"+s3;
+doc.text(20,50,r3);
+var s4=document.getElementById("gen").value;
+var r4="Gender       :"+s4;
+doc.text(20,60,r4);
+var s5=document.getElementById("phno").value;
+var r5="Phone Number :"+s5;
+doc.text(20,70,r5);
+doc.addPage();
+doc.text(20,20,"TEST TANMAI!!!!!");
+doc.save(s5+".pdf");
+}
+</script>
+	<script type="text/javascript">
+		function ram(){}
+		const AWS = require('aws-sdk');
+// Enter copied or downloaded access ID and secret key here
+const ID = 'AKIAI43MM4QUVYVDT5WA';
+const SECRET = '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';
+
+// The name of the bucket that you have created
+const BUCKET_NAME = 'hasramtan1html';
+const s3 = new AWS.S3({
+    accessKeyId: ID,
+    secretAccessKey: SECRET
+});
+const params = {
+    Bucket:'javatrialscript',
+    CreateBucketConfiguration: {
+        // Set your region here
+        LocationConstraint: "ap-south-1"//"eu-west-1"
+    }
+};
+
+s3.createBucket(Bucket:'javatrialscript',CreateBucketConfiguration: {LocationConstraint: "ap-south-1"}, function(err, data) {
+    if (err)
+    {
+    	document.getElementById("demo").innerHTML = 5 + 6;
+    	console.log(err, err.stack);
+    } 
+    else 
+    	{
+    		console.log('Bucket Created Successfully', data.Location);
+    		document.getElementById("demo").innerHTML = 5 + 5;
+    	}
+});
+	</script>
+</head>
+
+<body>
+	<p id="demo"></p>
+	<h1>Weird</h1>
+	<br>
+	<label>Patient Name &nbsp;:</label>
+	<input type="text" name="pname" id="pname">
+	<br>
+	<label>Age &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;:</label>
+	<input type="text" name="age" id="age">
+	<br>
+	<label>Weight &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;:</label>
+	<input type="text" name="weight" id="weight">
+	<br>
+	<label>Gender &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;:</label>
+	<input type="text" name="gen" id="gen">
+	<br>
+	<label>Phone number :</label>
+	<input type="text" name="phno" id="phno">
+	<br>
+	<button type="button" onclick="genPDF()">BUTTON</button>
+	<a href="javascript:genPDF()">Dowloadpdf</a>
+<button type="button" onclick="ram()">BUTTON1111111</button>
+</body>
+</html>

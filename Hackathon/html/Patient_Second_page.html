@@ -1,0 +1,55 @@
+<html>
+<head>
+<title>your turn</title>
+</head>
+<style>
+body {
+  background-image: url(Apollo-Hospitals-Logo.png),url(bg1.jpg);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat,repeat;
+}
+.formfield *
+{
+vertical-align: middle;
+}
+
+button {
+  padding: 15px 32px;
+  text-align: center;
+  border-radius: 12px;
+  font-size: 16px;
+  border: 2px solid #48D1CC;
+transition-duration:0.4s;
+}
+button:hover
+{
+  background-color: #48D1CC;
+  color: white;
+  border:2px solid #000000
+}
+label
+{
+  Font-size:28px;
+}
+textarea
+{
+Font-size:20px;
+}
+
+</style>
+<body><center>
+<p class="formfield">
+<label>Enter your Phone number:</label>
+<textarea id="phno2" name="phone number" rows=2 cols=40></textarea></p>
+<br>
+<button onclick="count2()">Done!</button>
+<h1 id="demo"></h1>
+
+<script>
+function count2() {
+  document.getElementById("demo").innerHTML ="10 more patients left";
+}
+</script>
+</center>
+</body>
+</html>
